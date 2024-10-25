@@ -235,7 +235,8 @@ sub import {
     local $@;
     eval { warnings->unimport('experimental::builtin') };
   }
-  namespace::clean->import(-cleanee => $caller, @_);
+  namespace::clean->import(-cleanee => $caller, @_)
+    if @_;
   return;
 }
 
